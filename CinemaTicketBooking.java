@@ -45,7 +45,6 @@ public class CinemaTicketBooking {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Movie list
         String[] movies = {
             "Avengers: Endgame",
             "Inception",
@@ -70,7 +69,6 @@ public class CinemaTicketBooking {
 
         String selectedMovie = movies[movieChoice - 1];
 
-        // Seat types and prices
         System.out.println("\n========== Seat Types ==========");
         System.out.println("1. General  - Rs. 150.00");
         System.out.println("2. Premium  - Rs. 250.00");
@@ -101,6 +99,8 @@ public class CinemaTicketBooking {
                 ticketPrice = 400.00;
                 seatType = "VIP";
                 break;
+            default:
+                break;
         }
 
         System.out.print("\nEnter Number of Tickets: ");
@@ -111,7 +111,6 @@ public class CinemaTicketBooking {
             numberOfTickets = sc.nextInt();
         }
 
-        // Create object and display bill
         MovieTicket ticket = new MovieTicket(selectedMovie, ticketPrice, numberOfTickets, seatType);
         ticket.displayBill();
 
